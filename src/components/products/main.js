@@ -13,7 +13,7 @@ function Main(props){
         valueType,
         valueByType,
         valueBrand,
-        valueRate,
+        valueRating,
         priceFrom,
         priceTo
     } = useSelector(state => state.sideBar);
@@ -26,15 +26,14 @@ function Main(props){
         isLoading,
         error,
     } = useSelector(state => state.product)
-    console.log(error, products);
-
+   
     useEffect(() => {
         const action = getProducts({
             valueTitle,
             valueType,
             valueByType,
             valueBrand,
-            valueRate,
+            valueRating,
             priceFrom,
             priceTo,
             sort,
@@ -42,7 +41,7 @@ function Main(props){
         });
 
         dispatch(action);
-    },[ valueTitle,valueType,valueByType,valueBrand,valueRate,priceFrom,priceTo,sort,valueSearch,dispatch]);
+    },[ valueTitle,valueType,valueByType,valueBrand,valueRating,priceFrom,priceTo,sort,valueSearch,dispatch]);
       
     useEffect(() => {
         const action = getCountProducts(products);
@@ -70,6 +69,5 @@ function Main(props){
         </div>
     );
 }
-
 
 export default Main;

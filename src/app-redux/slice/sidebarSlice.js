@@ -13,7 +13,7 @@ const sideBarSlice = createSlice({
     valueType:"",
     valueByType:[],
     valueBrand:[],
-    valueRate:"",
+    valueRating :"",
     priceFrom:"",
     priceTo:"",
     valueIdTitle: "",
@@ -50,32 +50,32 @@ const sideBarSlice = createSlice({
     },
 
     getByBrand(state, action) {
-      const currentBrand = state.valueByBrand.indexOf(action.payload);
+      const currentBrand = state.valueBrand.indexOf(action.payload);
 
       if (currentBrand === -1) {
-        state.valueByBrand.push(action.payload);
+        state.valueBrand.push(action.payload);
       } else {
-        state.valueByBrand.splice(currentBrand, 1);
+        state.valueBrand.splice(currentBrand, 1);
       }
     },
 
     getByRatings(state, action) {
-      state.valueByRatings = action.payload;
+      state.valueRating = action.payload;
     },
 
-    getByPricesStart(state, action) {
-      state.valueByPricesStart = action.payload;
+    getByPriceFrom(state, action) {
+      state.priceFrom = action.payload;
     },
 
-    getByPricesEnd(state, action) {
-      state.valueByPricesEnd = action.payload;
+    getByPriceTo(state, action) {
+      state.priceTo = action.payload;
     },
 
     getClearAllFilter(state, action) {
-      state.valueByBrand = [];
-      state.valueByPricesEnd = "";
-      state.valueByPricesStart = "";
-      state.valueByRatings = "";
+      state.valueBrand = [];
+      state.priceFrom = "";
+      state.priceTo = "";
+      state.valueRating = "";
       state.valueByType = [];
       state.valueTitle = "";
       state.valueType = "";
@@ -106,8 +106,8 @@ export const {
   getByType,
   getByBrand,
   getByRatings,
-  getByPricesStart,
-  getByPricesEnd,
+  getByPriceFrom,
+  getByPriceTo,
   getClearAllFilter,
   getIdTitle,
   getIdType,

@@ -3,7 +3,7 @@ function fetchProducts({
     valueType,
     valueByType,
     valueBrand,
-    valueRate,
+    valueRating,
     priceFrom,
     priceTo,
     sort,
@@ -16,7 +16,7 @@ function fetchProducts({
     paramURL += (valueType ? (`&type=${valueType}`) : ""); 
     paramURL += (valueByType.length !== 0 ? (`&byType=${valueByType}`) : ""); 
     paramURL += (valueBrand.length !== 0 ? (`&brand=${valueBrand}`) : ""); 
-    paramURL += (valueRate ? (`&ratings=${valueRate}`) : ""); 
+    paramURL += (valueRating ? (`&ratings=${valueRating}`) : ""); 
     paramURL += (priceFrom ? (`&price_gte=${priceFrom}`) : ""); 
     paramURL += (priceTo ? (`&price_lte=${priceTo}`) : ""); 
     console.log(paramURL);
