@@ -20,13 +20,14 @@ function RefineByPrices(props) {
     };
     itemPrices.push(item);
   }
-
+  console.log(priceTo);
   const onHandlerClick = (start, end) => {
     console.log(start);
     console.log(end);
+    
       const actionFrom = getByPriceFrom(start);
       const actionTo = getByPriceTo(end);
-   
+      
       dispatch(actionFrom);
       dispatch(actionTo);
   };
@@ -40,7 +41,7 @@ function RefineByPrices(props) {
               <li
                 key={e.id}
                 onClick={() => onHandlerClick(e.start, e.end)}
-                className = {priceTo === e.end ? "active" : ""}
+                className = {(priceTo === e.end ) ? "active" : ""}
               >
                 ≤{e.end}
               </li>
@@ -60,7 +61,7 @@ function RefineByPrices(props) {
               <li
                 key={e.id}
                 onClick={() => onHandlerClick(e.start, e.end, e.id)}
-                className={priceTo === e.start ? "active" : ""}
+                className={priceTo === e.end ? "active" : ""}
               >
                 ${e.start} - {e.end}
               </li>

@@ -22,7 +22,7 @@ export const getProducts = createAsyncThunk(
                 sort,
                 valueSearch,
             });
-
+            
             return currentProducts;
     }
 )

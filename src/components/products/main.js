@@ -42,7 +42,7 @@ function Main(props){
 
         dispatch(action);
     },[ valueTitle,valueType,valueByType,valueBrand,valueRating,priceFrom,priceTo,sort,valueSearch,dispatch]);
-      
+     
     useEffect(() => {
         const action = getCountProducts(products);
         dispatch(action)
